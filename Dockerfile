@@ -38,7 +38,8 @@ RUN . /opt/contrib/pip_options.sh \
 
 # Install registry
 RUN . /opt/contrib/pip_options.sh \
-    && pip install $PIP_OPTIONS file:///docker-registry#egg=docker-registry[bugsnag,newrelic,cors]
+    && pip install --allow-external Werkzeug $PIP_OPTIONS \
+           file:///docker-registry#egg=docker-registry[bugsnag,newrelic,cors]
 
 RUN patch \
  $(python -c 'import boto; import os; print os.path.dirname(boto.__file__)')/connection.py \

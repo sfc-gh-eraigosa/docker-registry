@@ -35,7 +35,7 @@ else
     unset ftp_proxy
     unset socks_proxy
     unset no_proxy
-    [ -f /etc/apt/apt.conf ] && cat /etc/apt/apt.conf | grep -v '::proxy' > /etc/apt.conf
+    [ -f /etc/apt/apt.conf ] && cat /etc/apt/apt.conf | grep -v '::proxy' > /etc/apt/apt.conf
     echo "skiping proxy settings"
     echo "If proxy settings are needed, use command before running docker: "
     echo "for build,  echo "PROXY='http://myproxy:8080'" >contrib/build_env.sh "
